@@ -1,49 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-LOGFILE="$HOME/.config/hypr/scripts/wallpaper.log"
-WALLPAPER_DIR="$HOME/Imagens/Wallpapers/WallpaperGlobal"
+# Define your wallpaper directory
+WALLPAPER_DIR="$HOME/Imagens/wallpapers"
 
-# Arquivo para guardar o índice atual
-INDEX_FILE="$HOME/.config/hypr/scripts/wallpaper_index"
+# Find a random image in the directory
+WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" \) | shuf -n 1)
 
-# Pega a lista de wallpapers
-mapfile -t WALLPAPERS < <(find "$WALLPAPER_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.jpeg' \) | sort)
+# Check if swww-daemon is running, if not, start it
+swww query || swww-daemon 
+sleep 0.2
 
-TOTAL=${#WALLPAPERS[@]}
-
-if [ $TOTAL -eq 0 ]; then
-  echo "$(date): Nenhum wallpaper encontrado em $WALLPAPER_DIR" >> "$LOGFILE"
-  exit 1
-fi
-
-# Se não existir arquivo índice, começa em 0
-if [ ! -f "$INDEX_FILE" ]; then
-  echo 0 > "$INDEX_FILE"
-fi
-
-CURRENT_INDEX=$(cat "$INDEX_FILE")
-
-case "$1" in
-  -n)
-    # Próximo wallpaper
-    CURRENT_INDEX=$(( (CURRENT_INDEX + 1) % TOTAL ))
-    ;;
-  -p)
-    # Anterior wallpaper
-    CURRENT_INDEX=$(( (CURRENT_INDEX - 1 + TOTAL) % TOTAL ))
-    ;;
-  *)
-    # Se não passar argumento, escolhe aleatório
-    CURRENT_INDEX=$(( RANDOM % TOTAL ))
-    ;;
-esac
-
-# Atualiza o índice no arquivo
-echo $CURRENT_INDEX > "$INDEX_FILE"
-
-WALLPAPER="${WALLPAPERS[$CURRENT_INDEX]}"
-
-echo "$(date): Definindo wallpaper: $WALLPAPER" >> "$LOGFILE"
-
-# Troca wallpaper com transição suave
-swww img "$WALLPAPER" --transition-type grow --transition-fps 60 --transition-duration 1
+# Set the wallpaper with a random transition type
+swww img "$WALLPAPER" --transition-type random --transition-fps 60
