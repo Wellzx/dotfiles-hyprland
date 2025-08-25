@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 35,
+  "height": 20,
   "spacing": 10,
   "modules-left": [
     "hyprland/workspaces",
@@ -16,8 +16,8 @@
     "custom/microphone",
     "clock",
     "cpu",
-    "memory",
-    "custom/power"
+    "memory"
+    //"custom/power"
   ],
   
   "wlr/taskbar": {

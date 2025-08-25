@@ -3,17 +3,17 @@
     border: none;
     border-radius: 0;
     font-family: JetBrainsMono Nerd Font;
-    font-size: 10pt;
+    font-size: 12pt;
     min-height: 0;
 }
 window#waybar {
-    opacity: 0.9;
+    opacity: 1.0;
     background: @background-darker;
     color: @foreground;
     border-bottom: 2px solid @background;
 }
 #workspaces button {
-    padding: 0 10px;
+    padding: 0 8px;
     background: @background;
     color: @foreground;
 }
