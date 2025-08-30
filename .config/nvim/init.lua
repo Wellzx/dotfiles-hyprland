@@ -1,7 +1,0 @@
-require("core.plugins")
-require("core.options").setup()
-require("core.keymaps").setup()
-require("core.transparent").setup()
-require("core.nvim-tree").setup() 
-require("core.telescope").setup()
-require("core.alpha-nvim").setup()

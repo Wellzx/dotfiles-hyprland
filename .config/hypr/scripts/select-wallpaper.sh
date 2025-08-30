@@ -1,23 +1,24 @@
 #!/bin/bash
 
-# Directory containing your wallpapers
 WALLPAPER_DIR="$HOME/Imagens/wallpapers"
 
-# Make sure swww-daemon is running, if not, start it
+# Inicia o swww-daemon se não estiver rodando
 if ! pgrep -x "swww-daemon" > /dev/null; then
     swww-daemon &
-    sleep 0.5  # give it a moment to start
+    sleep 0.5
 fi
 
-# List wallpapers in rofi with icons/thumbnails
-SELECTED=$(ls "$WALLPAPER_DIR" | while read a; do
-  echo -en "$a\0icon\x1f$WALLPAPER_DIR/$a\n"
-done | rofi -dmenu -show-icons -p "Choose wallpaper:")
+# Usa find em vez de ls (mais seguro com espaços nos nomes)
+SELECTED=$(find "$WALLPAPER_DIR" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \) \
+    | while read -r a; do
+        fname=$(basename "$a")
+        echo -en "$fname\0icon\x1f$a\n"
+    done | rofi -dmenu -show-icons -p "Choose wallpaper:")
 
-# If user made a choice, apply it using swww
+# Se escolheu, aplica
 if [ -n "$SELECTED" ]; then
     swww img "$WALLPAPER_DIR/$SELECTED" \
-        --transition-type random \
+        --transition-type any \
         --transition-fps 60 \
         --transition-duration 1
 fi
