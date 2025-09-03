@@ -1,19 +1,13 @@
 [General]
 Version=202
-ViewPropsTimestamp=2025,8,29,20,58,25.306
-
-[IconsMode]
-PreviewSize=80
+ViewPropsTimestamp=2025,8,31,10,58,31.427
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
-Places Icons Static Size=16
+Places Icons Static Size=22
 
 [MainWindow]
 MenuBar=Disabled
 
-[PlacesPanel]
-IconSize=16
-
 [UiSettings]
-ColorScheme=MateriaDark
+ColorScheme=Gruvbox-Dark-Green

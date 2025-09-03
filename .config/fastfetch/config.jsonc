@@ -2,60 +2,122 @@
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
 
     "logo": {
-        //"source": "$HOME/.config/fastfetch/ascii/2.txt",
-        "source": "arch_small",
+        "source": "$HOME/.config/fastfetch/ascii/animegirl.txt",
+         "color": {
+            "1": "0"
+         },
         "padding": {
-	        "top": 2,
-	        "left": 1
-	}
-
+            "top": 1,
+            "left": 1
+        }
     },
+
     "display": {
-        "separator": "  "
+        "separator": " : "
     },
     "modules": [
-	"break",
-
-	"title",
-
+        "break",
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[36m    コンピューター"
+        },
+        {
+            "type": "custom",
+            "format": "┌──────────────────────────────────────────┐"
+        },
         {
             "type": "os",
-            "key": "os    "
-        },
-        {   "type": "wm",
-            "key" : "de    "
-        },
-        {
-            "type": "packages",
-            "format": "{} (pacman)",
-            "key": "pkgs  "
-        },
-        {   "type": "shell",
-            "key": "shell "
+            "key": "   OS",
+            "keyColor": "magenta"
         },
         {
             "type": "kernel",
-            "key": "kernel"
+            "key": "   Kernel",
+            "keyColor": "red"
         },
         {
-            "type": "uptime",
-            "format": "{2}h {3}m",
-            "key": "uptime"
+            "type": "packages",
+            "key": "   Packages",
+            "keyColor": "green"
         },
         {
-            "type": "command",
-            "key": "os age",
-            "text": "birth_install=$(stat -c %W /); current=$(date +%s);    days_difference=$(( (current - birth_install) / 86400 )); echo $days_difference days"
+            "type": "display",
+            "key": "  󰍹 Display",
+            "keyColor": "green"
+        },
+        {
+            "type": "wm",
+            "key": "  󱂬 WM",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "terminal",
+            "key": "   Terminal",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "custom",
+            "format": "└──────────────────────────────────────────┘"
+        },
+        "break",
+        {
+            "type": "title",
+            "key": "  "
+        },
+        {
+            "type": "custom",
+            "format": "┌──────────────────────────────────────────┐"
+        },
+        {
+            "type": "cpu",
+            "format": "{1}",
+            "key": "   CPU",
+            "keyColor": "blue"
+        },
+        {
+            "type": "gpu",
+            "format": "{2}",
+            "key": "   GPU",
+            "keyColor": "blue"
+        },
+        {
+            "type": "gpu",
+            "format": "{3}",
+            "key": "   GPU Driver",
+            "keyColor": "magenta"
         },
         {
             "type": "memory",
-            "key": "memory"
+            "key": "   Memory",
+            "keyColor": "magenta"
         },
-        "break",
-        //{
-            //"type": "colors",
-          //  "symbol": "circle"
-        //},
+        {
+            "type": "disk",
+            "key": "  󰋊 Disk (/)",
+            "folders": "/",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "command",
+            "key": "  󱦟 OS Age ",
+            "keyColor": "31",
+            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+        },
+        {
+            "type": "uptime",
+            "key": "  󱫐 Uptime ",
+            "keyColor": "red"
+        },
+        {
+            "type": "custom",
+            "format": "└──────────────────────────────────────────┘"
+        },
+        {
+            "type": "colors",
+            "paddingLeft": 2,
+            "symbol": "circle"
+        },
         "break"
     ]
 }

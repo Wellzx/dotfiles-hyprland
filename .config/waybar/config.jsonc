@@ -1,8 +1,10 @@
 {
+  "margin-top": 5,
   "layer": "top",
   "position": "top",
   "height": 35,
-  "spacing": 15,
+  "width": 1900,
+  "spacing": 10,
   "modules-left": [
     "hyprland/workspaces",
     "wlr/taskbar"
@@ -38,7 +40,7 @@
   }
   },
   "hyprland/window": {
-    "format": "{} 󰣇 ",
+    "format": "{}  ",
     "max-length": 50
   },
   "clock": {
@@ -46,7 +48,7 @@
     "tooltip-format": "<big>{:%A, %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "tray": {
-    "spacing": 4
+    "spacing": 10
   },
 
   "hyprland/language": {
@@ -91,7 +93,7 @@
   },
 
    "custom/power": {
-    "format": "󰐥",
+    "format": " ",
     "on-click": "wlogout"
   },
 
@@ -123,6 +125,5 @@
     "tooltip": true,
     "tooltip-format": "{title}\nby: {artist}\n{position} / {length}\nPlayer: {player}\n\n󰐎 Click to play/pause\n󰺤 Scroll to seek\n󰙤 Middle click previous\n󰙢 Right click next",  
     "tooltip-format-stopped": "Player: {player}\n\n󰐎 Click to play/pause\n󰺤 Scroll to seek\n󰙤 Middle click previous\n󰙢 Right click next"
-  }
-  
+  } 
 }

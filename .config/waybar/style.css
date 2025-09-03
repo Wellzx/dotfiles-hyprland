@@ -1,7 +1,7 @@
 @import url("/home/wel/.config/waybar/colors.css");
 * {
     border: none;
-    border-radius: 0;
+    border-radius: 20px;
     font-family: JetBrainsMono Nerd Font;
     font-size: 12pt;
     min-height: 0;
@@ -33,6 +33,6 @@ window#waybar {
     background: @background;
 }
 #custom-power {
-    padding: 0 4px;
+    padding: 0 8px;
     background: @background;
 }

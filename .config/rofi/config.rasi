@@ -1,25 +1,31 @@
+/* Rofi Gruvbox Dark completo mantendo todos os elementos originais */
+
 * {
     font: "JetBrainsMono Nerd Font 14";
     g-spacing: 10px;
     g-margin: 0;
     b-color: #000000FF;
-    fg-color: #FFFFFFFF;
-    fgp-color: #888888FF;
+    fg-color: #ebdbb2FF;       /* Gruvbox light text */
+    fgp-color: #928374FF;      /* placeholder */
     b-radius: 8px;
     g-padding: 8px;
-    hl-color: #FFFFFFFF;
-    hlt-color: #000000FF;
-    alt-color: #111111FF;
-    wbg-color: #000000CC;
+    hl-color: #83a598FF;       /* selection */
+    hlt-color: #282828FF;      /* selected text */
+    alt-color: transparent;      /* alternate element */
+    wbg-color: #282828CC;      /* background */
     w-border: 2px solid;
-    w-border-color: #FFFFFFFF;
+    w-border-color: #fb4934FF; /* Gruvbox red border */
     w-padding: 12px;
 }
 
 configuration {
-    modi: "drun";
+    modi: "run,filebrowser,drun";
     show-icons: true;
-    display-drun: "";
+    icon-theme: "Gruvbox-Plus-Dark";
+    drun-display-format: "{icon} {name}";
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-filebrowser: "   File ";
 }
 
 listview {
@@ -61,7 +67,7 @@ mainbox {
     spacing: @g-spacing;
     margin: @g-margin;
     padding: @g-padding;
-    children: ["inputbar", "listview", "message"];
+    children: ["inputbar", "listview", "mode-switcher", "message"];
 }
 
 element {
@@ -76,26 +82,59 @@ element {
 }
 
 element normal.normal {
-	background-color: transparent;
-	text-color: @fg-color;
+    background-color: transparent;
+    text-color: @fg-color;
 }
 
 element alternate.normal {
-	background-color: @alt-color;
-	text-color: @fg-color;
+    background-color: @alt-color;
+    text-color: @fg-color;
 }
 
 element selected.active {
-	background-color: @hl-color;
-	text-color: @hlt-color;
+    background-color: @hl-color;
+    text-color: @hlt-color;
 }
 
 element selected.normal {
-	background-color: @hl-color;
-	text-color: @hlt-color;
+    background-color: @hl-color;
+    text-color: @hlt-color;
+}
+
+element-icon {
+    size: 24px;
+    padding: 0 6px 0 0;
+    alignment: vertical;
+    background-color: transparent;
+}
+
+mode-switcher {
+    border-color: #d3869bFF;
+    spacing: 0;
+    background-color: transparent;
+}
+
+button {
+    padding: 10px;
+    background-color: transparent;
+    text-color: @fg-color;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+button selected {
+    background-color: @wbg-color;
+    text-color: @hl-color;
 }
 
 message {
-    background-color: red;
+    background-color: transparent;
     border: 0px solid;
+}
+
+textbox {
+    padding: 6px;
+    margin: 20px 0 0 20px;
+    text-color: #d3869bFF;
+    background-color: transparent;
 }
