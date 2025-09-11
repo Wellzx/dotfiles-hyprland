@@ -2,9 +2,10 @@
   "margin-top": 5,
   "layer": "top",
   "position": "top",
-  "height": 35,
+  "height": 30,
   "width": 1900,
-  "spacing": 10,
+  "spacing": 12,
+
   "modules-left": [
     "hyprland/workspaces",
     "wlr/taskbar"
@@ -13,86 +14,76 @@
     "hyprland/window"
   ],
   "modules-right": [
+    //"mpris",
     "tray",
     "pulseaudio",
-    "custom/microphone",
-    "clock",
     "cpu",
     "memory",
+    "clock",
     "custom/power"
   ],
-  
+
   "wlr/taskbar": {
     "on-click": "activate",
     "on-click-middle": "close",
-    "ignore-list": [
-      "foot"
-    ]
+    "ignore-list": ["foot"]
   },
+
   "hyprland/workspaces": {
     "format": "{name}",
     "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e-1",
     "on-scroll-down": "hyprctl dispatch workspace e+1",
-    "tooltip": true,
+    "tooltip": false,
     "persistent-workspaces": {
-     "*": [1, 2, 3, 4, 5]
-  }
+      "*": [1, 2, 3, 4, 5]
+    }
   },
+
   "hyprland/window": {
-    "format": "{}  ",
+    "format": "{}  ",
     "max-length": 50
   },
+
   "clock": {
-    "format": "{:%H:%M:%S}",
+    "format": " {:%H:%M:%S}",
+    "format-alt": " {:%a,%b %d}", 
     "tooltip-format": "<big>{:%A, %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>"
   },
+
   "tray": {
     "spacing": 10
   },
 
-  "hyprland/language": {
-    "format-pl": "[pl]",
-    "format-en": "[us]",
-    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
-  },
-
   "cpu": {
-    "format": "{usage}% CPU"
+    "format": " {usage}%"
   },
 
   "memory": {
-    "format": "{used}/{total}MB"
+    "format": " {used}/{total}MB"
   },
 
   "pulseaudio": {
-  "format": "{icon} {volume}%",
-  "format-muted": "󰖁",
-  "format-icons": {
-    "headphone": "",
-    "hands-free": "",
-    "headset": "",
-    "phone": "",
-    "portable": "",
-    "car": "",
-    "default": ["", "", ""]
-  },
-  "on-click": "pavucontrol -t 3"
-  },
+      "format": "{icon} {volume}% {format_source}",
+      "format-bluetooth": "{icon} {volume}% {format_source}",
+      "format-bluetooth-muted": " {format_source}",
+      "format-muted": "  {format_source}",
+      "format-source": " {volume}%",
+      "format-source-muted": " ",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "🎧",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol"
+    },
 
-  "custom/microphone": {
-  "exec": "pactl get-source-volume @DEFAULT_SOURCE@ | awk '{print $5}' | head -n1 | tr -d '%'",
-  "return-type": "int",
-  "format": " {0}%",
-  "format-muted": "",
-  "interval": 2,
-  "on-click": "pavucontrol -t 4",
-  "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-  "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
-  "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%"
-  },
-
-   "custom/power": {
+  
+  "custom/power": {
     "format": " ",
     "on-click": "wlogout"
   },
@@ -117,7 +108,7 @@
       "playing": "\uf04b",
       "stopped": "\uf04d"
     },
-    "max-length": 30,
+    "max-length": 25,
     "on-click": "playerctl play-pause",
     "on-click-middle": "playerctl previous",
     "on-scroll-up": "playerctl position 1-",
@@ -125,5 +116,5 @@
     "tooltip": true,
     "tooltip-format": "{title}\nby: {artist}\n{position} / {length}\nPlayer: {player}\n\n󰐎 Click to play/pause\n󰺤 Scroll to seek\n󰙤 Middle click previous\n󰙢 Right click next",  
     "tooltip-format-stopped": "Player: {player}\n\n󰐎 Click to play/pause\n󰺤 Scroll to seek\n󰙤 Middle click previous\n󰙢 Right click next"
-  } 
+  }
 }

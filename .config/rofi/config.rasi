@@ -1,29 +1,27 @@
-/* Rofi Gruvbox Dark completo mantendo todos os elementos originais */
-
 * {
-    font: "JetBrainsMono Nerd Font 14";
+    font: "JetBrainsMono Nerd Font 15";
     g-spacing: 10px;
     g-margin: 0;
-    b-color: #000000FF;
-    fg-color: #ebdbb2FF;       /* Gruvbox light text */
-    fgp-color: #928374FF;      /* placeholder */
+    b-color: #000000FF;        /* borda global */
+    fg-color: #E0E0E0FF;       /* texto principal */
+    fgp-color: #AAAAAAFF;      /* placeholder */
     b-radius: 8px;
     g-padding: 8px;
-    hl-color: #83a598FF;       /* selection */
-    hlt-color: #282828FF;      /* selected text */
-    alt-color: transparent;      /* alternate element */
-    wbg-color: #282828CC;      /* background */
+    hl-color: #505050FF;       /* seleção */
+    hlt-color: #FFFFFFFF;      /* texto selecionado */
+    alt-color: transparent;    
+    wbg-color: #1E1E1EE5;      /* fundo da janela */
     w-border: 2px solid;
-    w-border-color: #fb4934FF; /* Gruvbox red border */
+    w-border-color: #888888FF; /* borda da janela */
     w-padding: 12px;
 }
 
 configuration {
     modi: "run,filebrowser,drun";
     show-icons: true;
-    icon-theme: "Gruvbox-Plus-Dark";
+    /*icon-theme: "";*/
     drun-display-format: "{icon} {name}";
-    display-drun: "   Apps ";
+    display-drun: "   Apps ";
     display-run: "   Run ";
     display-filebrowser: "   File ";
 }
@@ -40,7 +38,7 @@ listview {
 
 window {
     transparency: "real";
-    width: 600px;
+    width: 700px;
     border-radius: @b-radius;
     background-color: @wbg-color;
     border: @w-border;
@@ -109,7 +107,7 @@ element-icon {
 }
 
 mode-switcher {
-    border-color: #d3869bFF;
+    border-color: #CCCCCCFF;
     spacing: 0;
     background-color: transparent;
 }
@@ -135,6 +133,6 @@ message {
 textbox {
     padding: 6px;
     margin: 20px 0 0 20px;
-    text-color: #d3869bFF;
+    text-color: #CCCCCCFF;
     background-color: transparent;
 }

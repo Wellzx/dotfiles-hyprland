@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Pasta dos wallpapers
-WALLPAPER_DIR="$HOME/Imagens/wallpapers"
+WALLPAPER_DIR="$HOME/Pictures/wallpapers"
 
 # Pega uma imagem aleatória
 WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \) | shuf -n 1)

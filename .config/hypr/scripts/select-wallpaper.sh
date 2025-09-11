@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WALLPAPER_DIR="$HOME/Imagens/wallpapers"
+WALLPAPER_DIR="$HOME/Pictures/wallpapers"
 
 # Inicia o swww-daemon se não estiver rodando
 if ! pgrep -x "swww-daemon" > /dev/null; then

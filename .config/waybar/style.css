@@ -1,38 +1,46 @@
 @import url("/home/wel/.config/waybar/colors.css");
+
 * {
-    border: none;
-    border-radius: 20px;
-    font-family: JetBrainsMono Nerd Font;
-    font-size: 12pt;
-    min-height: 0;
+  transition: none;
+  box-shadow: none;
+  border: none;
+  border-radius: 10px;
+  padding: 2 2px;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 15px;
 }
-window#waybar {
-    opacity: 1.0;
-    background: @background-darker;
-    color: @foreground;
-    border-bottom: 2px solid @background;
+#waybar {
+  border-radius: 15px;
+  background: @background-darker;
+  color: @foreground;
+  border-bottom: 2px solid @background;
+  /* border: 2px solid #ffffff;  */
+}
+#workspaces {
+  margin: 0 3px;
+  color: transparent;
 }
 #workspaces button {
-    padding: 0 8px;
-    background: @background;
-    color: @foreground;
+  padding: 0 8px;
+  background: @background;
+  color: @foreground;
 }
 #workspaces button:hover {
-    box-shadow: inherit;
-    text-shadow: inherit;
-    background-image: linear-gradient(0deg, @selection, @background-darker);
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background-image: linear-gradient(0deg, @selection, @background-darker);
 }
 #workspaces button.active {
-    background-image: linear-gradient(0deg, @purple, @selection);
+  background-image: linear-gradient(0deg, @purple, @selection);
 }
 #taskbar button.active {
-    background-image: linear-gradient(0deg, @selection, @background-darker);
+  background-image: linear-gradient(0deg, @selection, @background-darker);
 }
 #clock {
-    padding: 0 4px;
-    background: @background;
+  padding: 0 4px;
+  background: @background;
 }
 #custom-power {
-    padding: 0 8px;
-    background: @background;
+  padding: 0 8px;
+  background: @background;
 }
