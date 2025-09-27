@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Pasta dos wallpapers
-WALLPAPER_DIR="$HOME/Pictures/wallpapers"
+WALLPAPER_DIR="$HOME/Imagens/wallpapers"
 
 # Pega uma imagem aleatória
-WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \) | shuf -n 1)
+WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg"  -o -iname "*.gif" -o -iname "*.webp" \) | shuf -n 1)
 
 # Garante que o daemon está rodando (não roda duas vezes)
 if ! pgrep -x "swww-daemon" > /dev/null; then

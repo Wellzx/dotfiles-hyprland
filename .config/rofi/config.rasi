@@ -1,34 +1,33 @@
 * {
-    font: "JetBrainsMono Nerd Font 15";
+    font: "JetBrainsMono Nerd Font 14";
     g-spacing: 10px;
     g-margin: 0;
-    b-color: #000000FF;        /* borda global */
+    b-color: transparent;       /* borda global removida */
     fg-color: #E0E0E0FF;       /* texto principal */
     fgp-color: #AAAAAAFF;      /* placeholder */
     b-radius: 8px;
     g-padding: 8px;
-    hl-color: #505050FF;       /* seleção */
+    hl-color: #505050CC;       /* seleção translúcida */
     hlt-color: #FFFFFFFF;      /* texto selecionado */
     alt-color: transparent;    
-    wbg-color: #1E1E1EE5;      /* fundo da janela */
-    w-border: 2px solid;
-    w-border-color: #888888FF; /* borda da janela */
+    wbg-color: #1C1C1CD0;      /* fundo preto menos intenso/translúcido */
+    w-border: 0px solid;       /* remove borda da janela */
+    w-border-color: transparent;
     w-padding: 12px;
 }
 
 configuration {
     modi: "run,filebrowser,drun";
     show-icons: true;
-    /*icon-theme: "";*/
     drun-display-format: "{icon} {name}";
-    display-drun: "   Apps ";
+    display-drun: "   Apps ";
     display-run: "   Run ";
     display-filebrowser: "   File ";
 }
 
 listview {
     columns: 1;
-    lines: 8;
+    lines: 10;
     fixed-height: true;
     fixed-columns: true;
     cycle: false;
@@ -38,7 +37,7 @@ listview {
 
 window {
     transparency: "real";
-    width: 700px;
+    width: 490px;
     border-radius: @b-radius;
     background-color: @wbg-color;
     border: @w-border;
@@ -65,7 +64,7 @@ mainbox {
     spacing: @g-spacing;
     margin: @g-margin;
     padding: @g-padding;
-    children: ["inputbar", "listview", "mode-switcher", "message"];
+    /*children: ["inputbar", "listview", "mode-switcher", "message"];*/ /* para aparecer files, run etc..*/
 }
 
 element {
@@ -107,7 +106,7 @@ element-icon {
 }
 
 mode-switcher {
-    border-color: #CCCCCCFF;
+    border-color: transparent;
     spacing: 0;
     background-color: transparent;
 }
@@ -121,8 +120,8 @@ button {
 }
 
 button selected {
-    background-color: @wbg-color;
-    text-color: @hl-color;
+    background-color: @hl-color; /* mantém destaque */
+    text-color: @hlt-color;
 }
 
 message {

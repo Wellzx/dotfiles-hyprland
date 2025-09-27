@@ -1,46 +1,127 @@
-@import url("/home/wel/.config/waybar/colors.css");
-
 * {
-  transition: none;
-  box-shadow: none;
-  border: none;
-  border-radius: 10px;
-  padding: 2 2px;
-  font-family: JetBrainsMono Nerd Font;
+  min-height: 0;
+  min-width: 0;
+  font-family: "JetBrainsMono NFP";
   font-size: 15px;
+  font-weight: 600;
 }
-#waybar {
-  border-radius: 15px;
-  background: @background-darker;
-  color: @foreground;
-  border-bottom: 2px solid @background;
-  /* border: 2px solid #ffffff;  */
+
+window#waybar {
+  transition-property: background-color;
+  transition-duration: 0.8s;
+  /* background-color: #1e1e2e; */
+  /* background-color: #181825; */
+   background-color: transparent; 
+  /* background-color: rgba(24, 24, 37, 0.2); */
 }
+
 #workspaces {
-  margin: 0 3px;
-  color: transparent;
+  padding: 4px;
+  background: #141414;
+  color: #141414;
+  border-radius: 50px;
+  margin: 5 5px;
 }
-#workspaces button {
-  padding: 0 8px;
-  background: @background;
-  color: @foreground;
+
+#workspaces button{
+  padding: 0px 7px;
+  border-radius: 12px;
+  background-color: #1A1A1A;
+  color: #1A1A1A;
+  font-weight: 900;
+  margin: 1 5px;
+  transition: 0.4s;
 }
+
 #workspaces button:hover {
+  background: #1A1A1A;
+  border: none;
   box-shadow: inherit;
   text-shadow: inherit;
-  background-image: linear-gradient(0deg, @selection, @background-darker);
 }
-#workspaces button.active {
-  background-image: linear-gradient(0deg, @purple, @selection);
+
+#workspaces button.active{
+  color: #141414;
+  background-color: #f0f0f0;
+  padding: 0 20px;
 }
-#taskbar button.active {
-  background-image: linear-gradient(0deg, @selection, @background-darker);
+
+#workspaces button.empty{
+  color: #1A1A1A;
 }
+
+#clock,
+#pulseaudio,
+#custom-logo,
+#custom-power,
+#custom-spotify,
+#custom-notification,
+#cpu,
+#tray,
+#memory,
+#window,
+#mpris {
+  padding: 0.3rem 0.6rem;
+  margin: 0.4rem 0.25rem;
+  border-radius: 10px;
+  background-color: #141414; 
+  /*background-color: #1e1e2e; */
+}
+
+#mpris.playing {
+  color: #a6e3a1;
+}
+
+#mpris.paused {
+  color: #9399b2;
+}
+
+#custom-sep {
+  padding: 0px;
+  color: #585b70;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#cpu {
+  color: #f0f0f0;
+}
+
+#memory {
+  color: #f0f0f0;
+}
+
 #clock {
-  padding: 0 4px;
-  background: @background;
+  color: #f0f0f0;
 }
+
+#clock.simpleclock {
+  color: #f0f0f0;
+}
+
+#window {
+  color: #f0f0f0;
+}
+
+#pulseaudio {
+  color: #f0f0f0;
+}
+
+#pulseaudio.muted {
+  color: #f38ba8;
+}
+
+#custom-logo {
+  color: #89b4fa;
+}
+
 #custom-power {
-  padding: 0 8px;
-  background: @background;
+  color: #f0f0f0;
+}
+
+tooltip {
+  background-color: #181825;
+  border: 2px solid #89b4fa;
 }
