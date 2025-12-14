@@ -1,50 +1,61 @@
 {
-  "layer": "bottom",
+  "layer": "top",
   "position": "top",
-  "margin-top": 1,
-  "height": 40,
-  "width": 1900,
-  "spacing": 2,
-  "exclusive": true,
-  "gtk-layer-shell": true,
-  "passthrough": false,
-  "fixed-center": true,
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["hyprland/window", "mpris"],
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "hyprland/window",
+    "clock#time"
+  ],
   "modules-right": [
     "tray",
-    "cpu",
+    "custom/separator",
     "memory",
+    "cpu",
+    "temperature",
     "pulseaudio",
-    "clock",
-    "clock#simpleclock",
-    "custom/notification",
+    "clock#date",
     "custom/power"
   ],
-  "custom/spotify": {
-    "format": "  {}",
-    "return-type": "json",
-    "on-click": "playerctl -p spotify play-pause",
-    "on-click-right": "spotifatius toggle-liked",
-    "on-click-middle": "playerctl -p spotify next",
-    "exec": "spotifatius monitor"
+  "custom/separator": {
+    "exec": "echo \"|\"",
+    "format": "{}"
   },
-  "mpris": {
-    "player": "spotify",
-    "dynamic-order": ["artist", "title"],
-    "format": "{player_icon} {dynamic}",
-    "format-paused": "{status_icon} <i>{dynamic}</i>",
-    "status-icons": {
-      "paused": ""
+  "tray": {
+    "icon-size": 13,
+    "spacing": 8,
+    "show-passive-items": true
+  },
+
+  "clock#time": {
+    "format": " {:%I:%M %p}",
+    "tooltip": false,
+    "tooltip-format": "Standard Time: {:%I:%M %p}"
+  },
+
+  "clock#date": {
+    "format": " {:L%a %d %b}",
+    "calendar": {
+      "format": {
+        "days": "<span weight='normal'>{}</span>",
+        "months": "<span color='#fff'><b>{}</b></span>",
+        "today": "<span color='#fff' weight='700'><u>{}</u></span>",
+        "weekdays": "<span color='#fff'><b>{}</b></span>",
+        "weeks": "<span color='#fff'><b>W{}</b></span>"
+      },
+      "mode": "month",
+      "mode-mon-col": 1,
+      "on-scroll": 1
     },
-    "player-icons": {
-      "default": ""
-    }
+    "tooltip-format": "<span color='#fff' font='Lexend 16'><tt><small>{calendar}</small></tt></span>"
   },
-   "hyprland/workspaces": {
+
+  "hyprland/workspaces": {
     "active-only": false,
     "all-outputs": true,
     "disable-scroll": false,
+    "separate-outputs": false,
     "on-scroll-up": "hyprctl dispatch workspace -1",
     "on-scroll-down": "hyprctl dispatch workspace +1",
     "on-click": "activate",
@@ -54,51 +65,38 @@
       "*": 5
     }
   },
+  
   "hyprland/window": {
-    "format": "{title:.50}" 
+    "format": "󰣇 {title:.50}"
   },
-  "tray": {
-    "show-passive-items": true,
-    "spacing": 10
-  },
-  "clock#simpleclock": {
-    "tooltip": false,
-    "format": " {:%H:%M}"
-  },
-  "clock": {
-    "format": " {:L%a %d %b}",
-    "calendar": {
-      "format": {
-        "days": "<span weight='normal'>{}</span>",
-        "months": "<span color='#cdd6f4'><b>{}</b></span>",
-        "today": "<span color='#f38ba8' weight='700'><u>{}</u></span>",
-        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
-        "weeks": "<span color='#a6e3a1'><b>W{}</b></span>",
-      },
-      "mode": "month",
-      "mode-mon-col": 1,
-      "on-scroll": 1
-    },
-    "tooltip-format": "<span color='#cdd6f4' font='Lexend 16'><tt><small>{calendar}</small></tt></span>",
-  },
-  "cpu": {
-    "format": " {usage}%",
-    "tooltip": true,
-    "interval": 1
-  },
+  
   "memory": {
-    "format": " {used:0.1f}Gi"
+    "format": "󰫗 {}%"
   },
-   "pulseaudio": {
-      "format": "{icon} {volume}% {format_source}",
+
+  "cpu": {
+    "format": " {usage}%"
+  },
+
+  "temperature" : {
+    "interval" : 1,
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    //"on-click" : "wezterm --config-file ~/.config/wezterm/float.lua start --class floatwezterm btm -e --default_widget_type temp",
+    "tooltip" : true,
+    "format" : " {temperatureC}°C"
+  },
+
+  "pulseaudio": {
+      "format": "{icon} {volume}%",
       "format-bluetooth": "{icon} {volume}% {format_source}",
       "format-bluetooth-muted": " {format_source}",
       "format-muted": "  {format_source}",
       "format-source": " {volume}%",
       "format-source-muted": " ",
       "format-icons": {
-        "headphone": "",
-        "hands-free": "",
+        //"headphone": "",
+        "hands-free": "󰙌",
         "headset": "🎧",
         "phone": "",
         "portable": "",
@@ -107,26 +105,10 @@
       },
       "on-click": "pavucontrol"
   },
-  "custom/sep": {
-    "format": "|",
-    "tooltip": false
-  },
+ 
   "custom/power": {
+    "format": "󰐥",
     "tooltip": false,
-    "on-click": "wlogout -p layer-shell &",
-    "format": ""
-  },
-  "custom/notification": {
-    "escape": true,
-    "exec": "swaync-client -swb",
-    "exec-if": "which swaync-client",
-    "format": "{icon}",
-    "format-icons": {
-      "none": "󰅺",
-      "notification": "󰡟"
-    },
-    "on-click": "sleep 0.1 && swaync-client -t -sw",
-    "return-type": "json",
-    "tooltip": false
-  },
+    "on-click": "exec wlogout -p layer-shell"
+  }
 }

@@ -1,7 +1,7 @@
 window {
   font-family: Fira Code Medium;
   font-size: 16pt;
-  color: #cdd6f4; /* text */
+  color: #cdd6f4; 
   background-color: rgba(30, 30, 46, 0.6);
 }
 
@@ -10,7 +10,7 @@ button {
   background-position: center;
   background-size: 20%;
   background-color: rgba(200, 220, 255, 0);
-  border-radius: 80px; /* Increased border radius for a more rounded look */
+  border-radius: 80px;
   margin: 10px;
   animation: gradient_f 10s ease-in infinite;
   transition:
@@ -25,16 +25,15 @@ button:focus {
 }
 
 button:hover {
-  background-color: rgb(145, 215, 227);
+  background-color: rgb(224, 217, 217);
   color: #1e1e2e;
   background-size: 50%;
   margin: 5px;
   border-radius: 80px;
 }
 
-/* Adjust the size of the icon or content inside the button */
 button span {
-  font-size: 1.2em; /* Increase the font size */
+  font-size: 1.2em;
 }
 
 #lock {

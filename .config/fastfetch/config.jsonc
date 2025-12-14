@@ -1,58 +1,117 @@
 {
-    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-    "logo": {
-        "source": "arch_small",
-        //"source": "$HOME/.config/fastfetch/logos/asuka.png",
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+        "source": "$HOME/.config/fastfetch/logos/rem.png",
         //"type": "kitty-icat",
         "padding": {
-	        "top": 2,
-	        "left": 1
-	}
+	        "top": 1,
+	        "left": 0
+	  }
+  },
+  "display": {
+    "separator": " : "
+  },
+  "modules": [
+    //"break",
+    {
+      "type": "custom",
+      "format": "\u001b[36m    イエスだけが救う"
     },
-    "display": {
-        "separator": "  "
+    {
+      "type": "custom",
+      "format": "┌──────────────────────────────────────────┐"
     },
-    "modules": [
-	"break",
-	"title",
-        {
-            "type": "os",
-            "key": "os    "
-        },
-        {   "type": "wm",
-            "key" : "de    "
-        },
-        {
-            "type": "packages",
-            "format": "{} (pacman)",
-            "key": "pkgs  "
-        },
-        {   "type": "shell",
-            "key": "shell "
-        },
-        {
-            "type": "kernel",
-            "key": "kernel"
-        },
-        {
-            "type": "uptime",
-            "format": "{2}h {3}m",
-            "key": "uptime"
-        },
-        {
-            "type": "command",
-            "key": "os age",
-            "text": "birth_install=$(stat -c %W /); current=$(date +%s);    days_difference=$(( (current - birth_install) / 86400 )); echo $days_difference days"
-        },
-        {
-            "type": "memory",
-            "key": "memory"
-        },
-        "break",
-        {
-            "type": "colors",
-            "symbol": "circle"
-        },
-        "break"
-    ]
+    {
+      "type": "os",
+      "key": "   OS",
+      "format": "{2}",
+      "keyColor": "white"
+    },
+    {
+      "type": "kernel",
+      "key": "   Kernel",
+      "format": "{2}",
+      "keyColor": "white"
+    },
+    {
+      "type": "packages",
+      "key": "  󰏗 Packages",
+      "keyColor": "white"
+    },
+    {
+      "type": "display",
+      "key": "  󰍹 Display",
+      "format": "{1}x{2} @ {3}Hz [{7}]",
+      "keyColor": "white"
+    },
+    {
+      "type": "terminal",
+      "key": "  >_ Terminal",
+      "keyColor": "white"
+    },
+    {
+      "type": "wm",
+      "key": "  󱂬 WM",
+      "format": "{2}",
+      "keyColor": "white"
+    },
+    {
+      "type": "custom",
+      "format": "└──────────────────────────────────────────┘"
+    },
+    "break",
+    {
+      "type": "title",
+      "key": "  ",
+      "format": "{6}{7}{8}"
+    },
+    {
+      "type": "custom",
+      "format": "┌──────────────────────────────────────────┐"
+    },
+    {
+      "type": "cpu",
+      "format": "{1} @ {7}",
+      "key": "   CPU",
+      "keyColor": "white"
+    },
+    {
+      "type": "gpu",
+      "format": "{1} {2}",
+      "key": "  󰊴 GPU",
+      "keyColor": "white"
+    },
+    {
+      "type": "gpu",
+      "format": "{3}",
+      "key": "   GPU Driver",
+      "keyColor": "white"
+    },
+    {
+      "type": "memory",
+      "key": "    Memory",
+      "keyColor": "white"
+    },
+    {
+      "type": "command",
+      "key": "  󱦟 OS Age ",
+      "keyColor": "white",
+      "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+    },
+    {
+      "type": "uptime",
+      "key": "  󱫐 Uptime ",
+      "keyColor": "white"
+    },
+    {
+      "type": "custom",
+      "format": "└──────────────────────────────────────────┘"
+    },
+    {
+      "type": "colors",
+      "paddingLeft": 2,
+      "symbol": "circle"
+    },
+    "break"
+  ]
 }

@@ -1,127 +1,48 @@
 * {
-  min-height: 0;
-  min-width: 0;
-  font-family: "JetBrainsMono NFP";
-  font-size: 15px;
-  font-weight: 600;
+  font-family: "Fira Code";
 }
 
-window#waybar {
-  transition-property: background-color;
-  transition-duration: 0.8s;
-  /* background-color: #1e1e2e; */
-  /* background-color: #181825; */
-   background-color: transparent; 
-  /* background-color: rgba(24, 24, 37, 0.2); */
+#waybar {
+  background: #171717;
+  color: #fff;
 }
 
-#workspaces {
-  padding: 4px;
-  background: #141414;
-  color: #141414;
-  border-radius: 50px;
-  margin: 5 5px;
+#clock {
+  color: #fff;
 }
 
-#workspaces button{
-  padding: 0px 7px;
-  border-radius: 12px;
-  background-color: #1A1A1A;
-  color: #1A1A1A;
-  font-weight: 900;
-  margin: 1 5px;
-  transition: 0.4s;
+#tray {
+  padding-left: 4px;
 }
 
 #workspaces button:hover {
-  background: #1A1A1A;
-  border: none;
-  box-shadow: inherit;
-  text-shadow: inherit;
+  background-color: transparent;
 }
 
-#workspaces button.active{
-  color: #141414;
-  background-color: #f0f0f0;
-  padding: 0 20px;
+#workspaces button {
+  color: #737373;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 0px;
 }
 
-#workspaces button.empty{
-  color: #1A1A1A;
+#workspaces button:hover {
+  background-color: #262626;
+}
+
+#workspaces button.active {
+  color: #fff;
 }
 
 #clock,
 #pulseaudio,
-#custom-logo,
 #custom-power,
-#custom-spotify,
-#custom-notification,
 #cpu,
 #tray,
 #memory,
-#window,
-#mpris {
-  padding: 0.3rem 0.6rem;
+#clock#date
+#clock#time {
+  padding: 0.2rem 0.4rem;
   margin: 0.4rem 0.25rem;
-  border-radius: 10px;
-  background-color: #141414; 
-  /*background-color: #1e1e2e; */
-}
-
-#mpris.playing {
-  color: #a6e3a1;
-}
-
-#mpris.paused {
-  color: #9399b2;
-}
-
-#custom-sep {
-  padding: 0px;
-  color: #585b70;
-}
-
-window#waybar.empty #window {
-  background-color: transparent;
-}
-
-#cpu {
-  color: #f0f0f0;
-}
-
-#memory {
-  color: #f0f0f0;
-}
-
-#clock {
-  color: #f0f0f0;
-}
-
-#clock.simpleclock {
-  color: #f0f0f0;
-}
-
-#window {
-  color: #f0f0f0;
-}
-
-#pulseaudio {
-  color: #f0f0f0;
-}
-
-#pulseaudio.muted {
-  color: #f38ba8;
-}
-
-#custom-logo {
-  color: #89b4fa;
-}
-
-#custom-power {
-  color: #f0f0f0;
-}
-
-tooltip {
-  background-color: #181825;
-  border: 2px solid #89b4fa;
+  color: #fff;
 }
