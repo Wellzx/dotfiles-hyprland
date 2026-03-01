@@ -1,0 +1,9 @@
+* {
+    background:       rgba(35, 35, 35, 0.6);
+    background-alt:   rgba(255, 255 , 255, 0.2);
+    foreground:       #FFFFFFFF;
+    selected:         #FFFFFF50;
+    active:           #98C379FF;
+    urgent:           #E06C75FF;
+    text-color:       #1E1E1E;
+}

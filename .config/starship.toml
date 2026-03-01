@@ -1,0 +1,18 @@
+add_newline = false
+
+format = "$directory$git_branch$git_status$cmd_duration$character"
+
+[directory]
+style = "fg:#b0b0b0"
+truncation_length = 3
+
+[git_branch]
+symbol = " "
+style = "fg:#8aa2d3"
+
+[git_status]
+style = "fg:#d19a66"
+
+[character]
+success_symbol = "❯ "
+error_symbol = "❯ "

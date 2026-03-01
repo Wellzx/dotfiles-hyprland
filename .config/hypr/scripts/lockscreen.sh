@@ -1,5 +1,5 @@
 #!/bin/bash
-# ~/ .config/hypr/scripts/LockScreen.sh
+# ~/ .config/hypr/scripts/lockscreen.sh
 # Script para travar a tela com Hyprlock e pausar música
 
 # --- Pausa música  ---

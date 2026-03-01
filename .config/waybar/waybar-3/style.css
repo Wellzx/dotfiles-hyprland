@@ -1,0 +1,99 @@
+* {
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 12pt;
+  font-weight: bold;
+  border-radius: 10px;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+@keyframes blink_red {
+  to {
+    background-color: #CC6666; 
+    color: #1a1816;
+  }
+}
+
+.warning,
+.critical,
+.urgent {
+  animation-name: blink_red;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+window#waybar {
+  color: rgb(214,254,254);
+  background-color: transparent;
+}
+
+window > box {
+  margin: 5px 5px 5px 5px;
+  background-color: rgba(30, 30, 30, 0.8); 
+}
+
+#workspaces {
+  padding-left: 0;
+  padding-right: 4px;
+}
+
+#workspaces button {
+  padding: 5px 10px;
+  border-radius: 12px;
+  color: rgb(214,254,254);
+}
+
+#workspaces button.active {
+  background-color: #b5e8e0;
+  color: #1a1816;
+}
+
+#workspaces button:hover {
+  background-color: #f8bd96;
+}
+
+/* #workspaces button.empty{
+  color: #D6D6D6;
+} */
+
+tooltip {
+  background-color: rgba(30, 30, 30, 0.8); 
+}
+
+tooltip label {
+  color: #d9e0ee;
+}
+
+#clock,
+#pulseaudio,
+#custom-power,
+#custom-swaync,
+#temparature,
+#cpu,
+#tray,
+#memory,
+#window,
+#mpris {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#mpris.playing {
+  color: #7FBF7F;
+}
+
+#mpris.paused {
+  color: #7F99BF
+}
+
+#custom-sep {
+  padding: 0px;
+  color: #D6D6D6;
+}
+
+#custom-power {
+  font-size: 16px;
+  padding-right: 12px;
+}
