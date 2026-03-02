@@ -25,7 +25,7 @@
 }
 
 window#waybar {
-  color: rgb(214,254,254);
+  color: rgb(255,553,254);
   background-color: transparent;
 }
 
@@ -42,7 +42,7 @@ window > box {
 #workspaces button {
   padding: 5px 10px;
   border-radius: 12px;
-  color: rgb(214,254,254);
+  color: rgb(255,553,254);
 }
 
 #workspaces button.active {
@@ -50,9 +50,9 @@ window > box {
   color: #1a1816;
 }
 
-#workspaces button:hover {
+/* #workspaces button:hover {
   background-color: #f8bd96;
-}
+} */
 
 /* #workspaces button.empty{
   color: #D6D6D6;

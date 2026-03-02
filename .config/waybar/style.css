@@ -1,9 +1,10 @@
 * {
-  min-height: 0;
-  min-width: 0;
-  font-family: "Fira Code Nerd Font";
-  font-size: 14px;
-  font-weight: 600;
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 12pt;
+  font-weight: bold;
+  border-radius: 10px;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 @keyframes blink_red {
@@ -23,38 +24,34 @@
   animation-direction: alternate;
 }
 
-
 window#waybar {
-  transition-property: background-color;
-  transition-duration: 0.5s;
+  color: rgb(255,553,254);
   background-color: transparent;
+}
+
+window > box {
+  margin: 5px 5px 5px 5px;
+  background-color: rgba(30, 30, 30, 0.8); 
 }
 
 #workspaces {
-  padding: 4px;
-  background: rgba(35, 35, 35, 0.8);
-  border-radius: 50px;
-  margin: 5 5px;
+  padding-left: 0;
+  padding-right: 4px;
 }
 
-#workspaces button{
-  padding: 0px 7px;
+#workspaces button {
+  padding: 5px 10px;
   border-radius: 12px;
-  font-weight: 900;
-  margin: 1 5px;
-  transition: 0.4s;
-  background-color: transparent;
-  color: #ffffff;
+  color: rgb(255,553,254);
 }
 
-#workspaces button.active{
-  background-color: #c8c8c8;
+#workspaces button.active {
+  background-color: #b5e8e0;
   color: #1a1816;
-  padding: 0 20px;
 }
 
 /* #workspaces button:hover {
-  background: rgba(35, 35, 35, 0.8);
+  background-color: #f8bd96;
 } */
 
 /* #workspaces button.empty{
@@ -73,21 +70,14 @@ tooltip label {
 #pulseaudio,
 #custom-power,
 #custom-swaync,
+#temparature,
 #cpu,
-#temperature,
-/* #tray, */
+#tray,
 #memory,
 #window,
 #mpris {
-  padding: 0.3rem 0.6rem;
-  margin: 0.4rem 0.25rem;
-  border-radius: 10px;
-  background-color: rgba(35, 35, 35, 0.8);
-  color: #ffffff
-}
-
-window#waybar.empty #window {
-  background-color: transparent;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #mpris.playing {
